@@ -7,7 +7,7 @@ while True:
     nmap_out=str(popen('nmap -sP '+ip).read()) #nmap command to scan on the given IP address
 
     if nmap_out.find('latency') == -1:  #looks for the word "latency" in the output
-        if state==0 :                   #this nested if makes sure that same repeated commands are not given
+        if state==0 :                   #this nested if makes sure that commands are not repeated
             pass
         else :
             system('vcgencmd display_power 0')  #Bash command that turns off the display
