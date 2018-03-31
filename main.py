@@ -5,7 +5,8 @@ ip="192.168.1.3" #Enter the IP address of the device that should keep the displa
 
 while True:
     nmap_out=str(popen('nmap -sP '+ip).read()) #nmap command to scan on the given IP address
-
+    sleep(2)
+    
     if nmap_out.find('latency') == -1:  #looks for the word "latency" in the output
         if state==0 :                   #this nested if makes sure that commands are not repeated
             pass
